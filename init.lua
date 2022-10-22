@@ -1,4 +1,3 @@
--- Basic configuration file
 require('settings')
 require('keymaps')
 -- Plugins
@@ -6,6 +5,7 @@ require('plugins/packer')		-- plugin manager
 --require('plugins/ayu')
 require("mason").setup()
 require("mason-lspconfig").setup()
+require("feline").setup()
 local rt = {
     server = {
         settings = {

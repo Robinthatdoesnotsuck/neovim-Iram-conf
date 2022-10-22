@@ -293,6 +293,8 @@ return require('packer').startup(function(use)
 	use 'nvim-treesitter/nvim-treesitter'
 	-- vimspector for debuging
 	use 'puremourning/vimspector'
+
+	-- Gihub Color theme and basic configuration
 	use({
   	'projekt0n/github-nvim-theme',
   	config = function()
@@ -316,5 +318,8 @@ return require('packer').startup(function(use)
    		})
   		end
 	})
+
+	-- Feline status bar
+	use 'feline-nvim/feline.nvim'
 end)
 
