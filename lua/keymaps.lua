@@ -25,3 +25,13 @@ nmap <F10> <cmd>call vimspector#StepInto()<cr>")
 map('n', "Db", ":call vimspector#ToggleBreakpoint()<cr>", {noremap = true})
 map('n', "Dw", ":call vimspector#AddWatch()<cr>", {noremap = true})
 map('n', "De", ":call vimspector#Evaluate()<cr>", {noremap = true})
+
+vim.api.nvim_set_keymap("n", "<leader>ta", ":$tabnew<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>tc", ":tabclose<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>to", ":tabonly<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>tn", ":tabn<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>tp", ":tabp<CR>", { noremap = true })
+-- move current tab to previous position
+vim.api.nvim_set_keymap("n", "<leader>tmp", ":-tabmove<CR>", { noremap = true })
+-- move current tab to next position
+vim.api.nvim_set_keymap("n", "<leader>tmn", ":+tabmove<CR>", { noremap = true })

@@ -321,5 +321,9 @@ return require('packer').startup(function(use)
 
 	-- Feline status bar
 	use 'feline-nvim/feline.nvim'
+
+	-- Tabby tabs for nvim
+	use 'nanozuki/tabby.nvim'
+
 end)
 
