@@ -323,7 +323,15 @@ return require('packer').startup(function(use)
 	use 'feline-nvim/feline.nvim'
 
 	-- Tabby tabs for nvim
-	use 'nanozuki/tabby.nvim'
+	use {
+		'nanozuki/tabby.nvim',
+		requires = {'kyazdani42/nvim-web-devicons'}
+	}
+
+	-- AutoSave plugin
+	use {
+			"Pocco81/auto-save.nvim"
+	}
 
 end)
 
