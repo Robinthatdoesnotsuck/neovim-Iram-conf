@@ -1,4 +1,5 @@
 local fn = vim.fn
+-- Everything
 local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
 if fn.empty(fn.glob(install_path)) > 0 then
 	packer_bootstrap = fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
@@ -6,6 +7,7 @@ end
 return require('packer').startup(function(use)
 	use 'wbthomason/packer.nvim'
 	use 'Shatur/neovim-ayu'
+-- Neotree stuff
 	use {
   "nvim-neo-tree/neo-tree.nvim",
     branch = "v2.x",
@@ -51,7 +53,7 @@ return require('packer').startup(function(use)
         {text = "", texthl = "DiagnosticSignHint"})
       -- NOTE: this is changed from v1.x, which used the old style of highlight groups
       -- in the form "LspDiagnosticsSignWarning"
-
+-- Neotree configuration
       require("neo-tree").setup({
         close_if_last_window = false, -- Close Neo-tree if it is the last window left in the tab
         popup_border_style = "rounded",
@@ -255,6 +257,8 @@ return require('packer').startup(function(use)
       vim.cmd([[nnoremap \ :Neotree reveal<cr>]])
     end
 	}
+
+	-- lsp server config
 	use {
 	 "williamboman/mason.nvim",
     	 "williamboman/mason-lspconfig.nvim"
@@ -332,6 +336,16 @@ return require('packer').startup(function(use)
 	use {
 			"Pocco81/auto-save.nvim"
 	}
+	-- Autopair
+	use {
+		'windwp/nvim-autopairs',
+		config = function()
+			require('nvim-autopairs').setup {}
+		end
+	}
 
+	-- Luasnip
+	use({"L3MON4D3/LuaSnip", tag = "v<CurrentMajor>.*"})
+	use "rafamadriz/friendly-snippets"
 end)
 
