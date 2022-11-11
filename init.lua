@@ -7,7 +7,7 @@ require("mason").setup()
 require("mason-lspconfig").setup()
 require("feline").setup()
 require("plugins/autosave")
-
+require("plugins/diffview")
 -- tabby config
 local theme = {
   fill = 'TabLineFill',

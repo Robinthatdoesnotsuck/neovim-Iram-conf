@@ -347,5 +347,6 @@ return require('packer').startup(function(use)
 	-- Luasnip
 	use({"L3MON4D3/LuaSnip", tag = "v<CurrentMajor>.*"})
 	use "rafamadriz/friendly-snippets"
+	use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
 end)
 

@@ -35,3 +35,4 @@ map("n", "<leader>tp", ":tabp<CR>", { noremap = true })
 map("n", "<leader>tmp", ":-tabmove<CR>", { noremap = true })
 -- move current tab to next position
 map("n", "<leader>tmn", ":+tabmove<CR>", { noremap = true })
+
