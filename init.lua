@@ -8,6 +8,7 @@ require("mason-lspconfig").setup()
 require("feline").setup()
 require("plugins/autosave")
 require("plugins/diffview")
+require("plugins/lspconfig")
 -- tabby config
 local theme = {
   fill = 'TabLineFill',
@@ -56,26 +57,6 @@ require('tabby.tabline').set(function(line)
   }
 end)
 
---lsp and other things
-local rt = {
-    server = {
-        settings = {
-            on_attach = function(_, bufnr)
-                -- Hover actions
-                vim.keymap.set("n", "<C-space>", rt.hover_actions.hover_actions, { buffer = bufnr })
-                -- Code action groups
-                vim.keymap.set("n", "<Leader>a", rt.code_action_group.code_action_group, { buffer = bufnr })
-                require 'illuminate'.on_attach(client)
-            end,
-            ["rust-analyzer"] = {
-                checkOnSave = {
-                    command = "clippy"
-                }, 
-            },
-        }
-    },
-}
-require('rust-tools').setup(rt)
 
 -- Treesitter Plugin Setup 
 require('nvim-treesitter.configs').setup {
@@ -150,34 +131,7 @@ cmp.setup({
       select = true,
     })
   },
-  -- Installed sources:
-  sources = {
-    { name = 'path' },                              -- file paths
-    { name = 'nvim_lsp', keyword_length = 3 },      -- from language server
-    { name = 'nvim_lsp_signature_help'},            -- display function signatures with current parameter emphasized
-    { name = 'nvim_lua', keyword_length = 2},       -- complete neovim's Lua runtime API such vim.lsp.*
-    { name = 'buffer', keyword_length = 2 },        -- source current buffer
-    { name = 'vsnip', keyword_length = 2 },         -- nvim-cmp source for vim-vsnip 
-    { name = 'calc'},                               -- source for math calculation
-  },
-  window = {
-      completion = cmp.config.window.bordered(),
-      documentation = cmp.config.window.bordered(),
-  },
-  formatting = {
-      fields = {'menu', 'abbr', 'kind'},
-      format = function(entry, item)
-          local menu_icon ={
-              nvim_lsp = 'λ',
-              vsnip = '⋗',
-              buffer = 'Ω',
-              path = '🖫',
-          }
-          item.menu = menu_icon[entry.source.name]
-          return item
-      end,
-  },
-})
+}) 
 
 
 -- Lua github-theme
