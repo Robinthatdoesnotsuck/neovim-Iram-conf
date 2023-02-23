@@ -14,3 +14,7 @@ opt.shiftwidth = 4
 opt.expandtab = false
 
 opt.termguicolors = true
+
+cmd [[
+	let g:deoplete#enable_at_startup = 1
+]]
