@@ -5,6 +5,7 @@ if fn.empty(fn.glob(install_path)) > 0 then
 	packer_bootstrap = fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
 end
 return require('packer').startup(function(use)
+
 	use 'wbthomason/packer.nvim'
 	-- Gihub Color theme and basic configuration
 	use({
@@ -12,6 +13,7 @@ return require('packer').startup(function(use)
   	config = function()
   		end
 	})
+
 	-- Neotree
 	use {
 		"nvim-neo-tree/neo-tree.nvim",
@@ -58,5 +60,13 @@ return require('packer').startup(function(use)
 			{text = "", texthl = "DiagnosticSignHint"})
 		end
 	}
+
+	-- General LSP stuff
+	use 'neovim/nvim-lspconfig'
+	use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
+  	use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
+  	use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
+  	use 'L3MON4D3/LuaSnip' -- Snippets plugin
+
 end)
 
