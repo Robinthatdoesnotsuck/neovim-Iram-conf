@@ -60,7 +60,15 @@ return require('packer').startup(function(use)
 			{text = "", texthl = "DiagnosticSignHint"})
 		end
 	}
-
+	
+	-- Nvim treesitter
+    use {
+        'nvim-treesitter/nvim-treesitter',
+        run = function()
+            local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+            ts_update()
+        end,
+    }
 	-- General LSP stuff
 	use 'neovim/nvim-lspconfig'
 	use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
