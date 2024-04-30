@@ -13,4 +13,6 @@ opt.tabstop = 4
 opt.shiftwidth = 4
 opt.expandtab = false
 
-opt.termguicolors = true
+opt.termguicolors = false 
+vim.api.nvim_create_user_command('PeekOpen', require('peek').open, {})
+vim.api.nvim_create_user_command('PeekClose', require('peek').close, {})
