@@ -3,3 +3,4 @@ require('settings')
 require('plugins/packer')		-- plugin manager
 require('plugins/peek')
 require('plugins/neo-tree')
+require('plugins/nvim-treesitter')
