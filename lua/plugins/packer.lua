@@ -7,11 +7,8 @@ end
 return require('packer').startup(function(use)
 
 	use 'wbthomason/packer.nvim'
-	-- Gihub Color theme and basic configuration
-	use({ 
-		'toppair/peek.nvim', 
-		run = 'deno task --quiet build:fast' 
-	})
+	-- Color theme
+	use { "catppuccin/nvim", as = "catppuccin" }
     use {
   "nvim-neo-tree/neo-tree.nvim",
     branch = "v3.x",

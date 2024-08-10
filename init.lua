@@ -1,6 +1,6 @@
 require('settings')
 -- Plugins
 require('plugins/packer')		-- plugin manager
-require('plugins/peek')
+-- require('plugins/peek')
 require('plugins/neo-tree')
 require('plugins/nvim-treesitter')
